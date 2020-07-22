@@ -2,8 +2,8 @@ package radiusauth
 
 import (
 	"net/http"
-
-	"github.com/mholt/caddy/caddyhttp/httpserver"
+	"github.com/caddyserver/caddy/v2"
+	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
 )
 
 type filter interface {
