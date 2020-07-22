@@ -10,15 +10,13 @@ import (
 	"time"
 
 	"github.com/boltdb/bolt"
-	"github.com/caddyserver/caddy/v2"
+	"github.com/caddyserver/caddy/v2/modules/caddyhttp"
 	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
 )
 
 func init() {
-	caddy.RegisterPlugin("radiusauth", caddy.Plugin{
-		ServerType: "http",
-		Action:     setup,
-	})
+	caddy.RegisterModule(Middleware{})
+	httpcaddyfile.RegisterHandlerDirective("radiusauth", parseCaddyfile)
 }
 
 func setup(c *caddy.Controller) error {
