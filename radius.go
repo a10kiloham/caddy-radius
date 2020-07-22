@@ -16,7 +16,8 @@ import (
 
 	"github.com/boltdb/bolt"
 	"github.com/jamesboswell/radius"
-	"github.com/mholt/caddy/caddyhttp/httpserver"
+	"github.com/caddyserver/caddy/v2"
+	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
 )
 
 // RADIUS is middleware to protect resources with a username and password.
